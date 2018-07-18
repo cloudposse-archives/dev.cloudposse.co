@@ -19,11 +19,11 @@ badges:
     url: "https://slack.cloudposse.com"
 
 description: |-
-  Terraform/Kubernetes Reference Infrastructure for Cloud Posse Audit Organization in AWS. 
-  
-  This account is suitable for receiving all CloudTrail logs from other accounts. 
+  Terraform/Kubernetes Reference Infrastructure for Cloud Posse Development Sandbox Organization in AWS.
 
-  __NOTE:__ Before creating the Audit infrastructure, you need to provision the [Parent ("Root") Organization](https://github.com/cloudposse/root.cloudposse.co) in AWS (because it creates resources needed for all other accounts). Follow the steps in [README](https://github.com/cloudposse/root.cloudposse.co) first. You need to do it only once.
+  This account is intended for developers to provision and test their own AWS infrastructure.
+
+  __NOTE:__ Before creating the Development infrastructure, you need to provision the [Parent ("Root") Organization](https://github.com/cloudposse/root.cloudposse.co) in AWS (because it creates resources needed for all other accounts). Follow the steps in [README](https://github.com/cloudposse/root.cloudposse.co) first. You need to do it only once.
 
 introduction: |-
   We use [geodesic](https://github.com/cloudposse/geodesic) to define and build world-class cloud infrastructures backed by AWS and powered by Kubernetes.
