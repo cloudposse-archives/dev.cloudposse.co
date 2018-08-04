@@ -1,6 +1,8 @@
-FROM cloudposse/terraform-root-modules:0.5.2 as terraform-root-modules
+FROM cloudposse/terraform-root-modules:0.5.3 as terraform-root-modules
 
-FROM cloudposse/geodesic:0.12.3
+FROM cloudposse/helmfiles:0.2.0 as helmfiles
+
+FROM cloudposse/geodesic:0.12.6
 
 ENV DOCKER_IMAGE="cloudposse/dev.cloudposse.co"
 ENV DOCKER_TAG="latest"
@@ -39,6 +41,10 @@ COPY --from=terraform-root-modules /aws/chamber/ /conf/chamber/
 COPY --from=terraform-root-modules /aws/cloudtrail/ /conf/cloudtrail/
 COPY --from=terraform-root-modules /aws/kops/ /conf/kops/
 COPY --from=terraform-root-modules /aws/kops-aws-platform/ /conf/kops-aws-platform/
+
+# Copy helmfiles
+COPY --from=helmfiles /helmfile.d/ /conf/helmfile.d/
+COPY --from=helmfiles /scripts/ /conf/scripts/
 
 # Place configuration in 'conf/' directory
 COPY conf/ /conf/
