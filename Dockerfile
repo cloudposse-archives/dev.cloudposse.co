@@ -1,6 +1,6 @@
 FROM cloudposse/terraform-root-modules:0.5.4 as terraform-root-modules
 
-FROM cloudposse/helmfiles:0.4.0 as helmfiles
+FROM cloudposse/helmfiles:0.8.3 as helmfiles
 
 FROM cloudposse/geodesic:0.21.0
 
